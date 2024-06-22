@@ -1,20 +1,12 @@
-import { useState } from "react";
-import { Counter } from "./components/common/Counter";
 import { Navbar } from "./components/layout/Navbar";
-import ItemListContainer from "./components/pages/ItemListContainer";
+import ItemListContainer from "./components/pages/ItemListContainer/ItemListContainer";
 
 function App() {
-  const[mode, setMode] = useState(false)
 
-  const cambiarModo = () =>{
-    setMode(!mode)
-  } 
   return (
     <div>
-      <button onClick={cambiarModo}>DE modo claro a modo oscuro</button>
-     {/*  <Navbar />
-      <ItemListContainer /> */}
-      <Counter />
+      <Navbar />
+      <ItemListContainer />
     </div>
   );
 }
