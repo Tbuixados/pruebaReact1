@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { ItemList } from "./ItemList.jsx";
 
 const ItemListContainer = () => {
@@ -8,13 +9,31 @@ const ItemListContainer = () => {
     - variables
     */
 
-  let nombre = "pepe";
+  const [items, setItems] = useState([]);
+
+  const [nombre, setNombre] = useState("pepe");
+  const [apellido, setApellido] = useState("perez");
 
   const saludar = () => {
-    alert("Hola pepe");
+    setNombre("juan");
+  };
+  const saludar2 = () => {
+    setNombre("ernesto");
   };
 
-  return <ItemList nombre={nombre} saludar={saludar} />;
+  /*  useEffect(() => {
+    console.log("Se hace la peticion - se ejecuta solo en el montaje");
+  }, []); */
+  useEffect(() => {
+    console.log("Se hace la peticion - se ejecuta solo en el montaje");
+  }, [apellido]);
+  return (
+    <>
+      <ItemList nombre={nombre} saludar={saludar} saludar2={saludar2} />
+      <h3>Apellido: {apellido}</h3>
+      <button onClick={() => setApellido("lopez")}>Cambiar</button>
+    </>
+  );
 };
 
 export default ItemListContainer;

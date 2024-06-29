@@ -1,8 +1,10 @@
-export const ItemList = ({ nombre, saludar }) => {
+// eslint-disable-next-line react/prop-types
+export const ItemList = ({ nombre, saludar, saludar2 }) => {
   return (
     <div>
       <h2>Hola {nombre}</h2>
       <button onClick={saludar}>Saludar</button>
+      <button onClick={saludar2}>Saludar2</button>
     </div>
   );
 };

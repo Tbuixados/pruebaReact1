@@ -1,12 +1,11 @@
-import { Navbar } from "./components/layout/Navbar";
-import ItemListContainer from "./components/pages/ItemListContainer/ItemListContainer";
+import { ItemCountContainer } from "./components/common/itemCount/ItemCountContainer";
 
 function App() {
-
   return (
     <div>
-      <Navbar />
-      <ItemListContainer />
+      <ItemCountContainer stock={3} />
+      <ItemCountContainer stock={5} />
+      <ItemCountContainer stock={7} />
     </div>
   );
 }
